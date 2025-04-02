@@ -1,0 +1,231 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #171717;
+    width: 100%; /* Ensure body takes full width */
+    color: #e3e3e3;
+}
+*{
+        box-sizing: border-box;
+}
+.root{
+        height: 100%;
+    max-width: 768px;
+    margin: auto;
+}
+.top_banner{
+    margin-bottom: 0 !important;
+    min-height: auto;
+    max-height: unset;
+    background-color: var(--secondary-color);
+    background-size: auto 360px;
+    background-repeat: repeat;
+    background-image: url(images/wallet-img.svg);
+}
+.header {
+    /*background-color: #333;*/
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Take full width */
+}
+
+.header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.header .auth button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.wallet {
+    /*background: linear-gradient(135deg, #6a11cb, #2575fc);*/
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%; /* Take full width */
+}
+
+.wallet .balance {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.new-id {
+   text-align: center;
+    width: 100%;
+    padding: 0 10px 120px;
+    margin-top: 15px;
+}
+
+.new-id button {
+    width: 100%;
+    background: #7e1fac;
+    border: none;
+    color: #fff;
+    min-height: 45px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.new-id button .arrow {
+    margin-left: 10px;
+}
+
+.sports {
+    margin: 20px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    width: calc(100% - 40px); /* Take full width minus margins */
+}
+
+.sports .sports-header {
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sports .sports-header h2 {
+    margin: 0;
+}
+
+.sports .sports-header a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.sports .sports-table .table-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.sports .sports-table .table-row:last-child {
+    border-bottom: none;
+}
+
+.bottom-nav {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    width: 100%; /* Take full width */
+    position: fixed; /* Fix to bottom */
+    bottom: 0; /* Align to bottom */
+}
+
+.bottom-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Adjustments for wallet section size */
+.wallet {
+    min-height: 180px;
+    padding: 10px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wallet .balance {
+    background: #1e1e1e;
+    margin: 5px auto 0;
+    border-radius: 15px;
+    padding: 0;
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.wallet .balance button {
+    color: #fff;
+    cursor: pointer;
+    min-height: 6.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+}
+
+.wallet .balance .amount {
+    position: relative;
+}
+.wallet .img-wrap img {
+    width: 30px;
+    display: block;
+    margin: auto;
+}
+.wallet .wallet-balance {
+    position: absolute;
+    width: 100%;
+    min-height: 160px;
+    border-radius: 15px;
+    inset: 50% 0;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background: #1e1e1e;
+    box-shadow: 0 1px 15px 1px #330d0099;
+}
+.wallet .wallet-balance img{
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+}
+.wallet .wallet-balance .logo-wrap img {
+    width: 55%;
+    padding-top: 5px;
+    display: block;
+    margin: auto;
+}
+.wallet .wallet-balance h3{
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0 0 5px;
+    font-size: 10px;
+    text-align: center;
+}
+.wallet .balance-info p {
+    font-size: 18px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    column-gap: 5px;
+}
+
+.wallet .wallet-balance .balance-info img {
+    width: 18px;
+}
+.wallet .balance button p{
+        margin: 0 0 5px;
+    font-size: 10px;
+    text-align: center;
+}
