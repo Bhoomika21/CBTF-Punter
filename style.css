@@ -6,15 +6,22 @@ body {
     width: 100%; /* Ensure body takes full width */
     color: #e3e3e3;
 }
-*{
-        box-sizing: border-box;
+
+* {
+    box-sizing: border-box;
 }
-.root{
-        height: 100%;
+
+.root {
+    height: 100%;
     max-width: 768px;
     margin: auto;
+    background-color: #111111;
+    min-height: 100vh;
 }
-.top_banner{
+p {
+    font-size: 12px;
+}
+.top_banner {
     margin-bottom: 0 !important;
     min-height: auto;
     max-height: unset;
@@ -23,7 +30,9 @@ body {
     background-repeat: repeat;
     background-image: url(images/wallet-img.svg);
 }
+
 .header {
+
     /*background-color: #333;*/
     color: white;
     padding: 10px 20px;
@@ -38,17 +47,31 @@ body {
     font-weight: bold;
 }
 
-.header .auth button {
-    background-color: #555;
-    color: white;
+.header .auth .login, .header .auth button {
+    background-color: #fff;
+    color: #000;
     border: none;
-    padding: 8px 12px;
-    margin-left: 10px;
-    border-radius: 5px;
+    border-radius: 7px;
     cursor: pointer;
+    font-size: 10px;
 }
-
+.globe_img{
+    margin-left: 5px;
+    float: right;
+}
+.globe_img a,.globe_img span{
+    text-decoration: none;
+    color: #fff ;
+}
+.globe_img img{
+    max-width: 20px;
+}
+.globe_img span{
+    display: block;
+    font-size: 12px;
+}
 .wallet {
+
     /*background: linear-gradient(135deg, #6a11cb, #2575fc);*/
     color: white;
     padding: 20px;
@@ -61,8 +84,9 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .new-id {
-   text-align: center;
+    text-align: center;
     width: 100%;
     padding: 0 10px 120px;
     margin-top: 15px;
@@ -121,14 +145,16 @@ body {
 }
 
 .bottom-nav {
-    background-color: #333;
+    background-color: #000;
     color: white;
     display: flex;
     justify-content: space-around;
     padding: 15px 0;
-    width: 100%; /* Take full width */
-    position: fixed; /* Fix to bottom */
-    bottom: 0; /* Align to bottom */
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    width: 768px;
+    border-radius: 20px 20px 0 0;
 }
 
 .bottom-nav a {
@@ -173,11 +199,13 @@ body {
 .wallet .balance .amount {
     position: relative;
 }
+
 .wallet .img-wrap img {
     width: 30px;
     display: block;
     margin: auto;
 }
+
 .wallet .wallet-balance {
     position: absolute;
     width: 100%;
@@ -193,24 +221,28 @@ body {
     background: #1e1e1e;
     box-shadow: 0 1px 15px 1px #330d0099;
 }
-.wallet .wallet-balance img{
+
+.wallet .wallet-balance img {
     display: flex;
     align-items: center;
     column-gap: 6px;
 }
+
 .wallet .wallet-balance .logo-wrap img {
     width: 55%;
     padding-top: 5px;
     display: block;
     margin: auto;
 }
-.wallet .wallet-balance h3{
+
+.wallet .wallet-balance h3 {
     color: #fff;
     text-transform: uppercase;
     margin: 0 0 5px;
     font-size: 10px;
     text-align: center;
 }
+
 .wallet .balance-info p {
     font-size: 18px;
     margin: 0;
@@ -224,8 +256,102 @@ body {
 .wallet .wallet-balance .balance-info img {
     width: 18px;
 }
-.wallet .balance button p{
-        margin: 0 0 5px;
+
+.wallet .balance button p {
+    margin: 0 0 5px;
     font-size: 10px;
     text-align: center;
+}
+
+.swiperWrap {
+    padding: 13px;
+}
+
+.swiperWrap img {
+    border-radius: 10px;
+}
+
+/*Popup Css*/
+.popup-container {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+    justify-content: center;
+        align-items: end;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 5px 5px 0 0;
+    width: 300px;
+    position: relative;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.popup-form input {
+    width: calc(100% - 22px); /* Adjust for padding and border */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.popup-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px; 
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.popup-form p {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.popup-content img {
+    max-width: 150px;
+}
+
+.popup-content .text-center {
+    text-align: center;
+}
+
+.popup-content h2 {
+    color: #c4c4c4 !important;
+    font-size: 1.25rem;
+}
+.modal-close {
+    top: 15%;
+    right: 4%;
+}
+.bg-secondary {
+    background: #1e1e1e !important;
+}
+.btn-primary {
+    background: #fe5001 !important;
+    border-color: #fe5001 !important;
+    color: #fff !important;
+}
+.text-light {
+    color: #c4c4c4 !important;
+}
+.form-label {
+    font-size: 14px;
 }
