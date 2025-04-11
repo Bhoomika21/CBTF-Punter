@@ -2,6 +2,9 @@
 html,body {
   font-family: "Open Sans", sans-serif;
 }
+body{
+    background-color: rgb(23, 23, 23);
+}
 .head{
     z-index:9;
 }
@@ -9,7 +12,7 @@ nav {
     background: #393939 !important;
 }
 .bg-primary {
-    background: #fe5001 !important;
+    background: #16416e !important;
 }
 .bg-dark {
     background: #111 !important;
@@ -21,7 +24,7 @@ nav {
     background: #393939 !important;
 }
 .text-primary {
-    color: #fe5001 !important;
+    color: #fff !important;
 }
 .text-light{
     color:#c4c4c4!important;
@@ -30,12 +33,15 @@ nav {
     border-color:#c4c4c4!important;
     color:#c4c4c4!important;
 }
+.bg-red {
+    background: #ad3333;
+}
 .border-primary {
-    border-color: #fe5001 !important;
+    border-color: #16416e !important;
 }
 .btn-primary{
-    background: #fe5001 !important;
-    border-color: #fe5001 !important;
+    background: #16416e !important;
+    border-color: #16416e !important;
     color:#fff!important;
 }
 .form-control{
@@ -170,15 +176,15 @@ p{
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    border: 2px solid #fe5001;
+    border: 2px solid #fff;
     background-color: transparent;
 }
 .rate-type-group input[type="radio"]:checked+label {
-    border-color: #fe5001;
-    color: #fe5001;
+    border-color: #fff;
+    color: #fff;
 }
 .rate-type-group input[type="radio"]:checked+label::before {
-    background-color: #fe5001;
+    background-color: #16416e;
 }
 /* Custom dropdown style */
 .form-label{
@@ -219,6 +225,9 @@ p{
 .game_panel .card-footer{
     bottom:62px;
 }
+.header .logo img {
+    max-width: 110px;
+}
 #myTab button {
     /*border: 2px solid transparent;
     background-clip: padding-box;
@@ -239,19 +248,19 @@ p{
     width: 100%;
     height: 100%;
     border: 2px solid transparent;
-    border-image: linear-gradient(45deg, #fe5001, rgba(254, 80, 1, 0)) 1;
+    border-image: linear-gradient(45deg, #16416e, rgba(22, 65, 110, 0)) 1;
     animation: gradientAnimation 2.5s linear infinite;
 }
 
 @keyframes gradientAnimation {
     0% {
-        border-image-source: linear-gradient(45deg, rgba(254, 80, 1, 0), rgba(254, 80, 1, 0.8));
+        border-image-source: linear-gradient(45deg, rgba(22, 65, 110, 0), rgba(22, 65, 110, 0.8));
     }
     50% {
-        border-image-source: linear-gradient(45deg, rgba(254, 80, 1, 0.5), rgba(254, 80, 1, 0));
+        border-image-source: linear-gradient(45deg, rgba(22, 65, 110, 0.5), rgba(22, 65, 110, 0));
     }
     100% {
-        border-image-source: linear-gradient(45deg, rgba(254, 80, 1, 0), rgba(254, 80, 1, 0.8));
+        border-image-source: linear-gradient(45deg, rgba(22, 65, 110, 0), rgba(22, 65, 110, 0.8));
     }
 }
 
@@ -266,15 +275,15 @@ p{
     margin-bottom: 0 !important;
     min-height: auto;
     max-height: unset;
-    background-color: var(--secondary-color);
+    background-color: #16416e;
     background-size: auto 360px;
     background-repeat: repeat;
-    background-image: url(images/wallet-img.svg);
+    /*background-image: url(images/wallet-img.svg);*/
 }
 
 .header {
 
-    /*background-color: #333;*/
+    /*background-color: #1e1e1e;*/
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -286,8 +295,10 @@ p{
 .header .logo {
     font-size: 1.5em;
     font-weight: bold;
+    display: flex;
+    gap: 10px;
 }
-
+.panel_footer{    max-width: 768px; right: 0;}
 .header .auth .login, .header .auth button {
     background-color: #fff;
     color: #000;
@@ -338,14 +349,15 @@ p{
 
 .new-id button {
     width: 100%;
-    background: #7e1fac;
+    background: #16416e;
     border: none;
     color: #fff;
-    min-height: 45px;
+    min-height: 38px;
     border-radius: 11px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 14px;
 }
 
 .new-id button .arrow {
