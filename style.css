@@ -79,6 +79,7 @@ p{
 .modal-close{
     top:15%;
     right:4%;
+    cursor: pointer;
 }
 .accordion-collapse,.accordion-collapse .btn{
     font-size:12px!important;
@@ -513,7 +514,7 @@ p{
     width: 18px;
 }
 
-.wallet .balance button p {
+.wallet .balance p {
     margin: 0 0 5px;
     font-size: 10px;
     text-align: center;
