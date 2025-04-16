@@ -40,9 +40,9 @@ nav {
     border-color: #16416e !important;
 }
 .btn-primary{
-    background: #16416e !important;
-    border-color: #16416e !important;
-    color:#fff!important;
+    background: #16416e;
+    border-color: #16416e;
+    color:#fff;
 }
 .form-control{
     border-radius:3px;
@@ -402,7 +402,7 @@ p{
 }
 
 .bottom-nav {
-    background-color: #000;
+    background-color: #393939 !important;
     color: white;
     display: flex;
     justify-content: space-around;
@@ -601,14 +601,12 @@ p{
 .bg-secondary {
     background: #1e1e1e !important;
 }
-.btn-primary {
-    background: #fe5001 !important;
-    border-color: #fe5001 !important;
-    color: #fff !important;
-}
 .text-light {
     color: #c4c4c4 !important;
 }
 .form-label {
     font-size: 14px;
+}
+.margin-bottom-60{
+    margin-bottom: 60px;
 }
