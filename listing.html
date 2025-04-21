@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CBTF</title>
+    <link rel="icon" type="image/x-icon" href="images/bigline_exch99_ico.jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -33,15 +34,40 @@
         <!-- Game List Section -->
         <ul class="nav nav-underline nav-justified" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link bg-secondary text-white" id="mypanel-tab" data-bs-toggle="tab" data-bs-target="#mypanel-tab-pane" type="button" role="tab" aria-controls="mypanel-tab-pane" aria-selected="false" tabindex="-1">MY PANELS</button>
+                <button class="nav-link bg-secondary text-white" id="mypanel-tab" data-bs-toggle="tab" data-bs-target="#mypanel-tab-pane" type="button" role="tab" aria-controls="mypanel-tab-pane" aria-selected="false" tabindex="-1">MY ID </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link bg-secondary text-white animated-button" id="createpanel1-1-tab" data-bs-toggle="tab" data-bs-target="#createpanel1-1-tab-pane" type="button" role="tab" aria-controls="createpanel1-1-tab-pane" aria-selected="false" tabindex="-1">CREATE USER ID</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active bg-secondary text-white" id="createpanel-tab" data-bs-toggle="tab" data-bs-target="#createpanel-tab-pane" type="button" role="tab" aria-controls="createpanel-tab-pane" aria-selected="true">CREATE PANEL</button>
+                <button class="nav-link bg-secondary text-white animated-button active" id="createpanel1-1-tab" data-bs-toggle="tab" data-bs-target="#createpanel1-1-tab-pane" type="button" role="tab" aria-controls="createpanel1-1-tab-pane" aria-selected="false" tabindex="-1">CREATE NEW ID</button>
             </li>
         </ul>
+
+        <!-- Footer Section -->
+        <div id="footer" class="footer bottom-nav py-2 bottom-0 rounded-top-4">
+            <div class="container-fluid">
+                <div class="foot-text d-flex align-items-center justify-content-between">
+                    <a class="btn text-primary w-100 lh-1 px-2 py-0" href="index.html">
+                        <i class="fa fa-home"></i> 
+                        <span class="d-block">Home</span>
+                    </a>
+                    <a class="btn text-light w-100 lh-1 px-2 py-0" href="listing.html">
+                        <i class="fa fa-columns"></i> 
+                        <span class="d-block">Ids</span>
+                    </a>
+                    <a class="btn text-light w-100 lh-1 px-2 py-0" href="passbook.html">
+                        <i class="fa fa-address-card-o"></i> 
+                        <span class="d-block">Passbook</span>
+                    </a>
+                    <a class="btn text-light w-100 lh-1 px-2 py-0" id="getWhatsAppBtn">
+                        <i class="fa fa-whatsapp"></i>
+                        <span class="d-block">WhatsApp</span>
+                    </a>
+                    <a class="btn text-primary w-100 lh-1 px-2 py-0" href="profile.html">
+                        <i class="fa fa-user"></i>
+                        <span class="d-block">Profile</span>
+                    </a>
+                </div>
+            </div>
+        </div>
 
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade" id="mypanel-tab-pane" role="tabpanel" aria-labelledby="mypanel-tab" tabindex="0">
@@ -53,7 +79,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="createpanel1-1-tab-pane" role="tabpanel" aria-labelledby="createpanel1-1-tab">
+            <div class="tab-pane fade active show" id="createpanel1-1-tab-pane" role="tabpanel" aria-labelledby="createpanel1-1-tab">
                 <div class="game_list mt-3 mb-5 pb-4">
                     <div class="container-fluid">
                         <div class="listing-filter mb-3">
@@ -68,14 +94,13 @@
                             <div class="list_item d-flex justify-content-between align-items-center bg-secondary rounded p-2 my-1">
                                 <div class="item-info d-flex align-items-center">
                                     <div class="item_img rounded-circle me-2 bg-dark p-1 d-flex align-items-center">
-                                        <img src="images/go.jpeg" alt="" class="img-fluid game-image rounded-circle">
+                                        <img src="images/bigline_exch99.png" alt="" class="img-fluid game-image rounded-circle">
                                     </div>
                                     <div class="detail position-relative">
                                         <div class="name text-light lh-2 text-capitalize">My99exch</div>
                                         <div class="link lh-2 text-smallcase">
                                             <a class="text-light text-decoration-none" href="http://My99exch.com" target="_blank">My99exch.com</a>
                                         </div>
-                                        <div class="rate text-primary lh-2 fw-bold">Rate @ 1:1</div>
                                     </div>
                                 </div>
                                 <a class="btn btn-sm text-white bg-primary rounded-1 px-3 create-button" href="create_userId.html" data-demo="false">Create</a>
@@ -84,63 +109,14 @@
                             <div class="list_item d-flex justify-content-between align-items-center bg-secondary rounded p-2 my-1">
                                 <div class="item-info d-flex align-items-center">
                                     <div class="item_img rounded-circle me-2 bg-dark p-1 d-flex align-items-center">
-                                        <img src="images/go.jpeg" alt="" class="img-fluid game-image rounded-circle">
+                                        <img src="images/bigline_exch99.png" alt="" class="img-fluid game-image rounded-circle">
                                     </div>
                                     <div class="detail position-relative">
                                         <div class="name text-light lh-2 text-capitalize">LemonExch7</div>
                                         <div class="link lh-2 text-smallcase"><a class="text-light text-decoration-none" href="http://lemonexch7.com" target="_blank">lemonexch7.com</a></div>
-                                        <div class="rate text-primary lh-2 fw-bold">Rate @ 1:1</div>
                                     </div>
                                 </div>
                                 <a class="btn btn-sm text-white bg-primary rounded-1 px-3 create-button" href="create_userId.html" data-demo="false">Create</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-pane fade show active" id="createpanel-tab-pane" role="tabpanel" aria-labelledby="createpanel-tab">
-                <div class="game_list mt-3 mb-5 pb-4">
-                    <div class="container-fluid">
-                        <div class="listing-filter mb-3">
-                            <div class="row align-items-center m-0">
-                                <div class="col-12 p-0">
-                                    <!-- Search Input for Create Panel 1:1 -->
-                                    <input type="text" id="searchInputCreatePanel" class="form-control bg-secondary text-light border-0" placeholder="Search by Name">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="listing" id="listingContainerCreatePanel">
-                            <div class="list_item d-flex justify-content-between align-items-center bg-secondary rounded p-2 my-1">
-                                <div class="item-info d-flex align-items-center">
-                                    <div class="item_img rounded-circle me-2 bg-dark p-1 d-flex align-items-center">
-                                        <img src="images/go.jpeg" alt="" class="img-fluid game-image rounded-circle">
-                                    </div>
-                                    <div class="detail position-relative">
-                                        <div class="name text-light lh-2 text-capitalize">Go Asia 9 (Asia)</div>
-                                        <div class="link lh-2 text-smallcase">
-                                            <a class="text-light text-decoration-none" href="http://goasia9.com" target="_blank">goasia9.com</a>
-                                        </div>
-                                        <div class="rate text-primary lh-2 fw-bold">Starting INR 0.060</div>
-                                    </div>
-                                </div>
-                                <a class="btn btn-sm text-white bg-primary rounded-1 px-3 create-button" href="create_panel.html" data-demo="false">Create</a>
-                            </div>
-                            
-                            <div class="list_item d-flex justify-content-between align-items-center bg-secondary rounded p-2 my-1">
-                                <div class="item-info d-flex align-items-center">
-                                    <div class="item_img rounded-circle me-2 bg-dark p-1 d-flex align-items-center">
-                                        <img src="images/go.jpeg" alt="" class="img-fluid game-image rounded-circle">
-                                    </div>
-                                    <div class="detail position-relative">
-                                        <div class="name text-light lh-2 text-capitalize">Play Exchange 9</div>
-                                        <div class="link lh-2 text-smallcase">
-                                            <a class="text-light text-decoration-none" href="http://playexch9.co" target="_blank">playexch9.co</a>
-                                        </div>
-                                        <div class="rate text-primary lh-2 fw-bold">Starting INR 0.060</div>
-                                    </div>
-                                </div>
-                                <a class="btn btn-sm text-white bg-primary rounded-1 px-3 create-button" href="create_panel.html" data-demo="false">Create</a>
                             </div>
                         </div>
                     </div>
