@@ -99,6 +99,50 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="game_list mt-3 mb-5 pb-4">
+                    <div class="container-fluid">
+                        <div class="listing">
+                            <div class="list_item d-flex justify-content-between align-items-center bg-secondary rounded p-2 my-1">
+                                <div class="item-info d-flex align-items-center">
+                                    <div class="item_img rounded-circle me-2 bg-dark p-1 d-flex align-items-center">
+                                        <img src="images/bigline_exch99.png" alt="" class="img-fluid game-image rounded-circle">
+                                    </div>
+                                    <div class="detail position-relative">
+                                        <div class="name text-light lh-2 text-capitalize fw-bold">My99exch</div>
+                                    </div>
+                                </div>
+                                <div class="action d-flex align-items-center justify-content-end">
+                                    <a class="btn btn-sm text-white bg-success rounded-circle px-2 me-1 panel-deposit" href="#" data-bs-toggle="modal" data-bs-target="#paneldepositModal" data-panel-id="156" data-rate="1">D</a>
+                                    <a class="btn btn-sm text-white bg-danger rounded-circle px-2 me-2 panel-withdraw" href="#" data-bs-toggle="modal" data-bs-target="#panelwithdrawModal" data-panel-id="156" data-rate="1">W</a>
+                                    <div class="dropdown">
+                                        <a class="btn btn-sm text-white bg-dark rounded-circle px-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa fa-ellipsis-v"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-dark">
+                                            <li>
+                                                <a class="dropdown-item panel-deposit" href="#" data-bs-toggle="modal" data-bs-target="#paneldepositModal" data-panel-id="156" data-rate="1">Deposit</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item panel-withdraw" href="#" data-bs-toggle="modal" data-bs-target="#panelwithdrawModal" data-panel-id="156" data-rate="1">Withdraw</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="mypanel_detail.php?id=156">View
+                                                    Transaction</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="mypanel_detail.php?id=156">Change Password</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="mypanel_detail.php?id=156">Close Id</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="tab-pane fade active show" id="createpanel1-1-tab-pane" role="tabpanel" aria-labelledby="createpanel1-1-tab">
                 <div class="game_list mt-3 mb-5 pb-4">
@@ -134,7 +178,9 @@
                                     </div>
                                     <div class="detail position-relative">
                                         <div class="name text-light lh-2 text-capitalize">LemonExch7</div>
-                                        <div class="link lh-2 text-smallcase"><a class="text-light text-decoration-none" href="http://lemonexch7.com" target="_blank">lemonexch7.com</a></div>
+                                        <div class="link lh-2 text-smallcase">
+                                            <a class="text-light text-decoration-none" href="http://lemonexch7.com" target="_blank">lemonexch7.com</a>
+                                        </div>
                                     </div>
                                 </div>
                                 <a class="btn btn-sm text-white bg-primary rounded-1 px-3 create-button" href="create_userId.html" data-demo="false">Create</a>
@@ -279,6 +325,154 @@
                         </div>
                     </div>
                 </form>
+            </div>
+        </div>
+
+        <!-- Modal for Withdraw -->
+        <div class="modal fade" id="withdrawModal" tabindex="-1" aria-labelledby="withdrawModalLabel" aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog position-absolute bottom-0 start-50 translate-middle-x m-0 px-3 w-100 py-2">
+                <form id="withdraw-form" method="post" enctype="multipart/form-data">
+                    <div class="modal-content bg-secondary border-0 rounded" id="withdraw-section">
+                        <!-- Withdraw Section (Step 1) -->
+                        <div class="modal-header bg-dark border-0 p-0 justify-content-center position-relative">
+                            <h6 class="modal-title text-light py-2 fw-normal" id="withdrawModalLabel">Withdraw</h6>
+                            <img src="img/modal-close.png" alt="" class="img-fluid position-absolute modal-close" data-bs-dismiss="modal" aria-label="Close">
+                        </div>
+                        <div class="modal-body">
+                            <div class="avl-bal bg-dark p-3 rounded-4">
+                                <p class="text-center m-0 text-light"><small>Available Balance</small></p>
+                                <h4 class="text-center m-0 text-white wallet-balance">0.00</h4>
+                            </div>
+                            <div class="mb-2">
+                                <label for="withdraw-coins" class="mb-1 text-light"><small>Withdraw Coins*</small></label>
+                                <input type="number" class="form-control bg-dark text-light border-0 withdraw-coins" id="withdraw-coins" placeholder="Enter coins" name="amount" required="">
+                            </div>
+                            <button class="btn bg-primary btn-sm text-white px-2 w-100" id="rqst-payment-btn">Request Payment</button>
+                        </div>
+                    </div>
+                    <!-- Payment Details Section (Step 2) -->
+                    <div class="modal-content bg-secondary border-0 rounded d-none" id="account-details-section">
+                        <div class="modal-header bg-dark border-0 p-0 justify-content-center position-relative">
+                            <h6 class="modal-title text-light py-2 fw-normal" id="withdrawModalLabel">Withdraw <span id="withdraw-amount"></span></h6>
+                            <img src="img/modal-close.png" alt="" class="img-fluid position-absolute modal-close" data-bs-dismiss="modal" aria-label="Close">
+                        </div>
+                        <div class="modal-body px-1">
+                            <div class="accordion bg-secondary p-2 rounded-3" id="withdraw">
+                                <div class="accordion-item bg-transparent border-0">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button bg-tertiary text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <i class="fa fa-database me-1"></i>Withdraw Funds
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse bg-tertiary text-light show p-1" data-bs-parent="#withdraw">
+                                        <ol class="ps-3 m-0">
+                                            <li>This form is for withdrawing the amount from the main wallet only.</li>
+                                            <li>The bonus wallet amount cannot be withdrawn by this form.</li>
+                                            <li>Do not put Withdraw request without betting with deposit amount. Such activity will be identified as suspicious.</li>
+                                            <li>If multiple users are using the same withdrawal account, then all the linked users will be blocked.</li>
+                                            <li>Paytm account numbers always start with 91.</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="accordion-item bg-transparent border-0">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button bg-tertiary text-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            <i class="fa fa-bank me-1"></i>Enter Account Details
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse bg-tertiary text-light" data-bs-parent="#withdraw">
+                                        <div class="bg-dark m-0 rounded-3 text-light p-2">
+                                            <div class="mb-2">
+                                                <label for="accountholdername" class="mb-1">Account Holder Name*</label>
+                                                <input type="text" class="form-control bg-secondary text-light border-0" name="accountholdername" id="accountholdername" placeholder="Account holder name" required="" value="">
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="accountnumber" class="mb-1">Account Number*</label>
+                                                <input type="text" class="form-control bg-secondary text-light border-0" name="accountnumber" id="accountnumber" placeholder="Account Number" required="" value="">
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="ifsccode" class="mb-1">IFSC Code*</label>
+                                                <input type="text" class="form-control bg-secondary text-light border-0" name="ifsccode" id="ifsccode" placeholder="IFSC Code" required="" value="">
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="bankname" class="mb-1">Bank Name*</label>
+                                                <input type="text" class="form-control bg-secondary text-light border-0" name="bankname" id="bankname" placeholder="Bank Name" required="" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3 px-2">
+                                <button type="submit" class="btn bg-primary btn-sm text-white px-2 w-100">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- ID Deposit Modal -->
+        <div class="modal fade" id="paneldepositModal" tabindex="-1" aria-labelledby="paneldepositModalLabel" data-bs-backdrop="static" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog position-absolute bottom-0 start-50 translate-middle-x m-0 px-3 w-100 py-2">
+                <div class="modal-content bg-secondary border-0 rounded">
+                    <div class="modal-header bg-dark border-0 p-0 justify-content-center position-relative">
+                        <h5 class="modal-title text-light py-2 fw-normal" id="paneldepositModalLabel">Deposit Coins</h5>
+                        <img src="img/modal-close.png" alt="" class="img-fluid position-absolute modal-close" data-bs-dismiss="modal" aria-label="Close">
+                    </div>
+                    <div class="modal-body">
+                        <form id="panel-deposit-form">
+                            <div class="avl-bal bg-dark p-3 rounded-4">
+                                <p class="text-center m-0 text-light"><small>Wallet Balance</small></p>
+                                <h4 class="text-center m-0 text-white wallet-balance">0.00</h4>
+                            </div>
+                            <input type="hidden" id="depositPanelId" name="panel_id" value="156">
+                            <div class="mb-3">
+                                <label for="paneldepositCoins" class="mb-1 text-light">Deposit Coins*</label>
+                                    <div class="calculation d-flex text-light align-items-center">
+                                    <input type="number" class="form-control bg-dark text-light border-0 panel-coins" id="paneldepositCoins" placeholder="Enter coins" min="1000" required="">
+                                    <span class="mx-2">X</span>
+                                    <input type="text" class="form-control bg-dark text-light border-0 panel-rate" placeholder="rate" id="rate" value="" readonly="">
+                                    <span class="mx-2">=</span>
+                                    <input type="text" class="form-control bg-dark text-light border-0" id="paneltotal-amt" value="" readonly="">
+                                    </div>
+                                <small><small class="text-primary">Minimum deposit amount is 1000 coins</small></small>
+                            </div>
+                            <button type="submit" class="btn bg-primary btn-sm text-white px-2 w-100">Deposit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Withdraw Modal -->
+        <div class="modal fade" id="panelwithdrawModal" tabindex="-1" aria-labelledby="panelwithdrawModalLabel" aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog position-absolute bottom-0 start-50 translate-middle-x m-0 px-3 w-100 py-2">
+                <div class="modal-content bg-secondary border-0 rounded">
+                    <div class="modal-header bg-dark border-0 p-0 justify-content-center position-relative">
+                        <h5 class="modal-title text-light py-2 fw-normal" id="panelwithdrawModalLabel">Withdraw Coins</h5>
+                        <img src="img/modal-close.png" alt="" class="img-fluid position-absolute modal-close" data-bs-dismiss="modal" aria-label="Close">
+                    </div>
+                    <div class="modal-body">
+                    <form id="panel-withdraw-form">
+                    <input type="hidden" id="withdrawPanelId" name="panel_id">
+                    <div class="avl-bal bg-dark p-3 rounded-4">
+                                <p class="text-center m-0 text-light"><small>Panel Balance</small></p>
+                                <h4 class="text-center m-0 text-white panel-balance">0</h4>
+                            </div>
+                            <div class="mb-3">
+                                <label for="panelwithdrawCoins" class="mb-1 text-light">Enter Coins to Withdraw</label>
+                                    <div class="calculation d-flex text-light align-items-center">
+                                    <input type="number" class="form-control bg-dark text-light border-0 panel-coins" id="panelwithdrawCoins" required="">
+                                    <span class="mx-2">X</span>
+                                    <input type="text" class="form-control bg-dark text-light border-0 panel-rate" placeholder="rate" id="rate" value="" readonly="">
+                                    <span class="mx-2">=</span>
+                                    <input type="text" class="form-control bg-dark text-light border-0" id="panelwtotal-amt" value="" readonly="">
+                                    </div>
+                            </div>
+                            <button type="submit" class="btn bg-primary btn-sm text-white px-2 w-100">Withdraw</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
