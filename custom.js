@@ -505,6 +505,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('deposit-section').classList.add('d-none');
         document.getElementById('payment-details-section').classList.remove('d-none');
     });
+    $('#back-to-deposit').click(function (event) {
+        event.preventDefault();
+        document.getElementById('deposit-section').classList.remove('d-none');
+        document.getElementById('payment-details-section').classList.add('d-none');
+    });
   }
   catch(err) {
     

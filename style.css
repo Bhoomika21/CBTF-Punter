@@ -90,7 +90,7 @@ p{
 }
 .accordion-collapse.show{
     background:#393939!important;
-    border:2px solid #fe5001;
+    border-bottom:2px solid #fff;
 }
 .accordion-button::after{
     filter:brightness(100);
@@ -784,4 +784,18 @@ a.createID-link .mat-icon {
     height: 24px;
     width: 24px;
     overflow: hidden;
+}
+.grid-acc-wrapper {
+    width: 100%;
+    min-width: 180px;
+    max-width: 180px;
+    background: #171717;
+    border-radius: 5px;
+    position: relative;
+    height: 100%;
+    flex: 1;
+    min-height: 100%;
+}
+.gree{
+    color: #138807;
 }
