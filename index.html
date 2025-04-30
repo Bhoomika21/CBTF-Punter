@@ -96,77 +96,95 @@
                 <span class="create-fwd"><img src="images/create-fwd.png" alt="" class="img-fluid h-100"></span>
             </button>
 
-            <div class="ids-slider-wrapper">
-              <div class="game-play-heading">
-                <h2>My IDs</h2>
-                <div class="action-btns">
-                  <a href="#" class="createID-link">
-                    <span class="material-icons">add_circle</span> Create ID
-                  </a>
-                  <a href="#" class="view-all-link">View All</a>
+            <!-- If there are user panels, display them -->
+            <div class="d-flex align-items-center justify-content-between py-2">
+                <div class="left">
+                    <h6 class="text-light border-bottom border-primary mb-0">My User IDs</h6>
                 </div>
-              </div>
-              <div class="my-ids-slide custom-id-slider">
-                <div class="grid-acc-wrapper">
-                  <div class="id-card">
-                    <div class="id-card-content">
-                      <div class="card-wrapper">
-                        <div class="card-header">
-                          <div class="id-info-section">
-                            <div class="id-info-wrap">
-                              <div class="info-wrap">
-                                <div class="img-wrap">
-                                  <img src="images/bigline_exch99.png" alt="Site Logo">
-                                </div>
-                                <p class="ellipsis">lemonexch7.com</p>
-                                <span class="site-url">
-                                  <span class="material-icons">open_in_new</span>
-                                </span>
-                              </div>
-                              <div class="user-detail-wrap">
-                                <div class="site-details">
-                                  <p class="id-password">
-                                    <span class="icon">
-                                      <span class="material-icons">person</span>
-                                    </span>
-                                    <span>acc128</span>
-                                  </p>
-                                </div>
-                                <div class="site-details">
-                                  <p class="id-password">
-                                    <span class="icon">
-                                      <span class="material-icons">lock_open</span>
-                                    </span>
-                                    <span>Kylie738</span>
-                                  </p>
-                                </div>
-                              </div>
-                              <div class="help-text">
-                                <p class="password-highlighter"> Password is with capital K </p>
-                                <p class="small-text"> Change password on first login. </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="deposit-withdraw-btn">
-                        <button class="d-btn no-translate">
-                          <p class="btn-text">
-                            <span class="material-icons up-arrow">arrow_upward</span> Deposit
-                          </p>
-                        </button>
-                        <button class="w-btn no-translate">
-                          <p class="btn-text">
-                            <span class="material-icons down-arrow">arrow_downward</span> Withdraw
-                          </p>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                <div class="right">
+                    <a href="listing.php?tab=mypanel" class="text-light lh-1 ms-1">View all</a>
                 </div>
-              </div>
             </div>
-
+            <div class="d-flex overflow-auto">
+                <div class="mypanel bg-tertiary p-2 rounded mb-2 flex-shrink-0" data-panel-id="156" style="width:70%;">
+                    <div class="card-header bg-secondary text-light rounded">
+                        <div class="item-info d-flex justify-content-between w-100 p-2">
+                            <div class="left d-flex align-items-center">
+                                <div class="item_img rounded me-2 bg-dark d-flex align-items-center">
+                                    <img src="admin/uploads/panel_icons/1729879945_6_20241025_234134_0005.png" alt="" class="img-fluid rounded">
+                                </div>
+                                <div class="detail">
+                                    <div class="name text-light text-capitalize">
+                                        My99exch</div>
+                                    <div class="link text-light">
+                                        my99exch.black</div>
+                                </div>
+                            </div>
+                            <div class="right d-flex justify-content-end">
+                                <a href="//my99exch.black" class="text-light" target="_blank">
+                                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="panel-info">
+                            <div class="id-info p-2">
+                                <div><i class="fa fa-user"></i> Username:
+                                    acc128</div>
+                                <div><i class="fa fa-lock"></i> Password:
+                                    123456</div>
+                            </div>
+                            <div class="note p-2 pt-0">
+                                <small class="d-block">Password starts with capital Letter</small>
+                                <small class="d-block">Change password after 1st login</small>
+                            </div>
+                            <div class="bg-dark p-2 rounded-bottom d-flex">
+                                <a href="#" class="bg-secondary text-decoration-none p-2 text-light w-100 text-center rounded me-1 panel-deposit" data-bs-toggle="modal" data-bs-target="#paneldepositModal" data-panel-id="156" data-rate="1">
+                                    <span class="icon text-success d-block"><i class="fa fa-arrow-up"></i></span>
+                                    <span class="text-light d-block">Deposit</span>
+                                </a>
+                                <a href="#" class="bg-secondary text-decoration-none p-2 text-light w-100 text-center rounded ms-1 panel-withdraw" data-bs-toggle="modal" data-bs-target="#panelwithdrawModal" data-panel-id="156" data-rate="1">
+                                    <span class="icon text-danger d-block"><i class="fa fa-arrow-down"></i></span>
+                                    <span class="text-light d-block">Withdraw</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Withdraw Modal -->
+                <div class="modal fade" id="panelwithdrawModal" tabindex="-1" aria-labelledby="panelwithdrawModalLabel" aria-hidden="true" data-bs-backdrop="static">
+                    <div class="modal-dialog position-absolute bottom-0 start-50 translate-middle-x m-0 px-3 w-100 py-2">
+                        <div class="modal-content bg-secondary border-0 rounded">
+                            <div class="modal-header bg-dark border-0 p-0 justify-content-center position-relative">
+                                <h5 class="modal-title text-light py-2 fw-normal" id="panelwithdrawModalLabel">Withdraw
+                                    Coins</h5>
+                                <img src="img/modal-close.png" alt="" class="img-fluid position-absolute modal-close" data-bs-dismiss="modal" aria-label="Close">
+                            </div>
+                            <div class="modal-body">
+                                <form id="panel-withdraw-form">
+                                    <input type="hidden" id="withdrawPanelId" name="panel_id">
+                                    <div class="avl-bal bg-dark p-3 rounded-4">
+                                        <p class="text-center m-0 text-light"><small>Panel Balance</small></p>
+                                        <h4 class="text-center m-0 text-white panel-balance">
+                                            <small>5000.00</small></h4>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="panelwithdrawCoins" class="mb-1 text-light">Enter Coins to
+                                            Withdraw</label>
+                                        <div class="calculation d-flex text-light align-items-center">
+                                            <input type="number" class="form-control bg-dark text-light border-0" id="panelwithdrawCoins" required="">
+                                            <span class="mx-2">X</span>
+                                            <input type="text" class="form-control bg-dark text-light border-0 panel-rate" placeholder="rate" id="rate" value="" readonly="">
+                                            <span class="mx-2">=</span>
+                                            <input type="text" class="form-control bg-dark text-light border-0" id="panelwtotal-amt" value="" readonly="">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn bg-primary btn-sm text-white px-2 w-100">Withdraw</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Footer Section -->
