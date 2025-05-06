@@ -510,10 +510,66 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('deposit-section').classList.remove('d-none');
         document.getElementById('payment-details-section').classList.add('d-none');
     });
+
+    $('#make-payment-btn').click(function (event) {
+        event.preventDefault();
+        document.getElementById('deposit-section').classList.add('d-none');
+        document.getElementById('payment-details-section').classList.remove('d-none');
+    });
+    $('#panelwithdrawid').click(function (event) {
+        event.preventDefault();
+        document.getElementById('account-details-section').classList.remove('d-none');
+        document.getElementById('withdraw-section-wrap').classList.add('d-none');
+    });
   }
   catch(err) {
     
   }
+
+  $(document).ready(function () {
+    // Withdraw button click
+    $('#rqst-payment-btn').click(function (event) {
+        event.preventDefault();
+        // Get input value and wallet balance
+        const withdrawCoins = parseFloat($('#withdrawModal .withdraw-coins').val());
+        const walletBalance = parseFloat($('#withdrawModal .wallet-balance').text().replace(/[^0-9.-]+/g, "")); // Clean the currency symbol if any
+        // Check if the withdrawal amount is blank or zero
+        if (isNaN(withdrawCoins) || withdrawCoins <= 0) {
+            alert("Please enter a valid amount to withdraw.");
+            $('#withdrawModal .withdraw-coins').focus();
+            return; // Stop further execution if validation fails
+        }
+        // Display the withdrawal amount
+        // const payAmount = withdrawCoins;
+        // $('#withdrawModal .withdraw-amount').text(`₹${payAmount}`);
+        // Check if the withdrawal amount is greater than or equal to the wallet balance
+        // if (withdrawCoins > walletBalance) {
+        //     alert("Oops! You don't have enough balance to withdraw");
+        //     $('#withdrawModal .withdraw-coins').focus();
+        //     return; // Stop further execution if validation fails
+        // }
+        // Hide withdrawal section and show account details section
+        $('#withdraw-section').addClass('d-none');
+        $('#account-details-section').removeClass('d-none');
+    });
+    $('#deposit-form .modal-close').click(function(event) {
+    	$('#deposit-form .modal-content').removeClass('d-none');
+    	$('#deposit-form .modal-content').not($('#deposit-form .modal-content').eq(0)).addClass('d-none')
+    });
+    $('#withdraw-form .modal-close').click(function(event) {
+    	$('#withdraw-form .modal-content').removeClass('d-none');
+    	$('#withdraw-form .modal-content').not($('#withdraw-form .modal-content').eq(0)).addClass('d-none')
+    });
+    $('#paneldepositModal .modal-close').click(function(event) {
+    	$('#paneldepositModal .modal-content').removeClass('d-none');
+    	$('#paneldepositModal .modal-content').not($('#paneldepositModal .modal-content').eq(0)).addClass('d-none')
+    });
+    $('#panelwithdrawModal .modal-close').click(function(event) {
+    	$('#panelwithdrawModal .modal-content').removeClass('d-none');
+    	$('#panelwithdrawModal .modal-content').not($('#panelwithdrawModal .modal-content').eq(0)).addClass('d-none')
+    });
+    
+  });
 
 });
 

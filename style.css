@@ -175,3 +175,24 @@ a.createID-link .mat-icon { font-size: 18px; display: flex; align-items: center;
 */.gree { color: #138807; }
 .checkbox_label { font-size: 12px; line-height: 1; }
 .form-check.checkbox_wrap { display: flex; align-items: center; gap: 0 10px; margin: 12px 0 20px; }
+.gap_2 {
+    margin-left: -5px;
+    margin-right: -5px;    flex-wrap: wrap;
+}
+.gap_2 .mypanel {margin-left: 5px; margin-right: 5px;}
+.width_25{width: calc(33.33% - 10px);}
+.toast-header i {
+    color: #16416e;
+    padding: 0 3px;
+    background: #fff;
+    font-size: 22px;
+    border-radius: 5px;
+    line-height: normal;
+    margin-right: 5px;
+}
+.close_btn_img{
+    cursor: pointer;
+}
+.small-text{
+    font-size: 14px;
+}
