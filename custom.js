@@ -493,15 +493,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Make payment button click for deposit
     $('#make-payment-btn').click(function (event) {
         event.preventDefault();
-        // const depositCoins = document.getElementById('deposit-coins').value;
-        // Check if the deposit amount is blank or zero
-        // if (!depositCoins || depositCoins <= 0) {
-        //     alert("Please enter a valid amount to deposit.");
-        //     document.getElementById('deposit-coins').focus();
-        //     return; // Stop further execution if validation fails
-        // }
-        // const payAmount = depositCoins ? depositCoins : 0;
-        // document.getElementById('pay-amount').textContent = `₹${payAmount}`;
         document.getElementById('deposit-section').classList.add('d-none');
         document.getElementById('payment-details-section').classList.remove('d-none');
     });
@@ -539,18 +530,8 @@ document.addEventListener('DOMContentLoaded', function() {
             $('#withdrawModal .withdraw-coins').focus();
             return; // Stop further execution if validation fails
         }
-        // Display the withdrawal amount
-        // const payAmount = withdrawCoins;
-        // $('#withdrawModal .withdraw-amount').text(`₹${payAmount}`);
-        // Check if the withdrawal amount is greater than or equal to the wallet balance
-        // if (withdrawCoins > walletBalance) {
-        //     alert("Oops! You don't have enough balance to withdraw");
-        //     $('#withdrawModal .withdraw-coins').focus();
-        //     return; // Stop further execution if validation fails
-        // }
-        // Hide withdrawal section and show account details section
-        $('#withdraw-section').addClass('d-none');
-        $('#account-details-section').removeClass('d-none');
+        $('#withdraw-section1').addClass('d-none');
+        $('#account-details-section1').removeClass('d-none');
     });
     $('#deposit-form .modal-close').click(function(event) {
     	$('#deposit-form .modal-content').removeClass('d-none');
