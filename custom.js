@@ -491,27 +491,27 @@ document.addEventListener('DOMContentLoaded', function() {
   
   try{
     // Make payment button click for deposit
-    $('#make-payment-btn').click(function (event) {
-        event.preventDefault();
-        document.getElementById('deposit-section').classList.add('d-none');
-        document.getElementById('payment-details-section').classList.remove('d-none');
-    });
-    $('#back-to-deposit').click(function (event) {
-        event.preventDefault();
-        document.getElementById('deposit-section').classList.remove('d-none');
-        document.getElementById('payment-details-section').classList.add('d-none');
-    });
+    // $('#make-payment-btn').click(function (event) {
+    //     event.preventDefault();
+    //     document.getElementById('deposit-section').classList.add('d-none');
+    //     document.getElementById('payment-details-section').classList.remove('d-none');
+    // });
+    // $('#back-to-deposit').click(function (event) {
+    //     event.preventDefault();
+    //     document.getElementById('deposit-section').classList.remove('d-none');
+    //     document.getElementById('payment-details-section').classList.add('d-none');
+    // });
 
-    $('#make-payment-btn').click(function (event) {
-        event.preventDefault();
-        document.getElementById('deposit-section').classList.add('d-none');
-        document.getElementById('payment-details-section').classList.remove('d-none');
-    });
-    $('#panelwithdrawid').click(function (event) {
-        event.preventDefault();
-        document.getElementById('account-details-section').classList.remove('d-none');
-        document.getElementById('withdraw-section-wrap').classList.add('d-none');
-    });
+    // $('#make-payment-btn').click(function (event) {
+    //     event.preventDefault();
+    //     document.getElementById('deposit-section').classList.add('d-none');
+    //     document.getElementById('payment-details-section').classList.remove('d-none');
+    // });
+    // $('#panelwithdrawid').click(function (event) {
+    //     event.preventDefault();
+    //     document.getElementById('account-details-section').classList.remove('d-none');
+    //     document.getElementById('withdraw-section-wrap').classList.add('d-none');
+    // });
   }
   catch(err) {
     
@@ -530,25 +530,25 @@ document.addEventListener('DOMContentLoaded', function() {
             $('#withdrawModal .withdraw-coins').focus();
             return; // Stop further execution if validation fails
         }
-        $('#withdraw-section1').addClass('d-none');
-        $('#account-details-section1').removeClass('d-none');
+        // $('#withdraw-section1').addClass('d-none');
+        // $('#account-details-section1').removeClass('d-none');
     });
-    $('#deposit-form .modal-close').click(function(event) {
-    	$('#deposit-form .modal-content').removeClass('d-none');
-    	$('#deposit-form .modal-content').not($('#deposit-form .modal-content').eq(0)).addClass('d-none')
-    });
-    $('#withdraw-form .modal-close').click(function(event) {
-    	$('#withdraw-form .modal-content').removeClass('d-none');
-    	$('#withdraw-form .modal-content').not($('#withdraw-form .modal-content').eq(0)).addClass('d-none')
-    });
-    $('#paneldepositModal .modal-close').click(function(event) {
-    	$('#paneldepositModal .modal-content').removeClass('d-none');
-    	$('#paneldepositModal .modal-content').not($('#paneldepositModal .modal-content').eq(0)).addClass('d-none')
-    });
-    $('#panelwithdrawModal .modal-close').click(function(event) {
-    	$('#panelwithdrawModal .modal-content').removeClass('d-none');
-    	$('#panelwithdrawModal .modal-content').not($('#panelwithdrawModal .modal-content').eq(0)).addClass('d-none')
-    });
+  //   $('#deposit-form .modal-close').click(function(event) {
+  //   	$('#deposit-form .modal-content').removeClass('d-none');
+  //   	$('#deposit-form .modal-content').not($('#deposit-form .modal-content').eq(0)).addClass('d-none')
+  //   });
+  //   $('#withdraw-form .modal-close').click(function(event) {
+  //   	$('#withdraw-form .modal-content').removeClass('d-none');
+  //   	$('#withdraw-form .modal-content').not($('#withdraw-form .modal-content').eq(0)).addClass('d-none')
+  //   });
+  //   $('#paneldepositModal .modal-close').click(function(event) {
+  //   	$('#paneldepositModal .modal-content').removeClass('d-none');
+  //   	$('#paneldepositModal .modal-content').not($('#paneldepositModal .modal-content').eq(0)).addClass('d-none')
+  //   });
+  //   $('#panelwithdrawModal .modal-close').click(function(event) {
+  //   	$('#panelwithdrawModal .modal-content').removeClass('d-none');
+  //   	$('#panelwithdrawModal .modal-content').not($('#panelwithdrawModal .modal-content').eq(0)).addClass('d-none')
+  //   });
     
   });
 
