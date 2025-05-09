@@ -194,237 +194,32 @@
         <!-- Modal for Deposit -->
         <div class="modal fade" id="depositModal" tabindex="-1" aria-labelledby="depositModalLabel" data-bs-backdrop="static" aria-modal="true" role="dialog">
             <div class="modal-dialog position-absolute bottom-0 start-50 translate-middle-x m-0 px-3 w-100 py-2">
-                <form id="deposit-form" method="post" enctype="multipart/form-data">
+                <div id="deposit-form">
                     <div class="modal-content bg-secondary border-0 rounded" id="deposit-section">
+                        <!-- Deposit Section (Step 1) -->
                         <div class="modal-header bg-dark border-0 p-0 justify-content-center position-relative">
                             <h6 class="modal-title text-light py-2 fw-normal" id="depositModalLabel">Deposit</h6>
-                            <img src="images/modal-close.png" alt="" class="img-fluid position-absolute top-0 end-0 p-2 modal-close" data-bs-dismiss="modal" aria-label="Close">
-                        </div>
-                        <div class="modal-body">
-                            <div class="avl-bal bg-dark p-3 rounded-4 mb-3">
-                                <div class="item_img rounded-circle me-2 bg-dark p-1 d-flex align-items-center">
-                                    <img src="images/bigline_exch99.png" alt="" class="img-fluid game-image rounded-circle">
-                                </div>
-                                <p class="text-center m-0 text-light"><small>lemonexch7.com</small></p>
-                                <h4 class="text-center m-0 text-white">acc128</h4>
-                            </div>
-                            <div class="avl-bal bg-dark p-3 rounded-4">
-                                <p class="text-center m-0 text-light"><small>Available Balance</small></p>
-                                <h4 class="text-center m-0 text-white wallet-balance">0.00</h4>
-                            </div>
-
-                            <div class="mb-2 mt-2">
-                                <label for="deposit-coins" class="mb-1 text-light"><small>Deposit Coins*</small></label>
-                                <input type="number" class="form-control bg-dark text-light border-0" id="deposit-coins" placeholder="Enter coins" min="1000" name="deposit_amount" required="">
-                                <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                  <label class="form-check-label" for="defaultCheck1">
-                                    <small>Pay from wallet <br> (Current Wallet Balance : <span>1000</span></small>
-                                </div>
-                            </div>
-                            <button class="btn bg-primary btn-sm text-white px-2 w-100" id="make-payment-btn">Make Payment</button>
-                        </div>
-                    </div>
-
-                    <div class="modal-content bg-secondary border-0 rounded d-none" id="payment-details-section">
-                        <div class="modal-header bg-dark border-0 p-0 justify-content-between position-relative px-2">
-                            <a class="p-0 m-0 d-flex align-items-center" href="#" id="back-to-deposit">
-                                <img src="images/back-btn.png" alt="" class="img-fluid h-100">
-                            </a>
-                            <h6 class="modal-title text-light py-2 fw-normal">Pay <span id="pay-amount"></span></h6>
-                            <img src="images/modal-close.png" alt="" class="img-fluid modal-close" data-bs-dismiss="modal" aria-label="Close">
-                        </div>
-                        <div class="modal-body px-1">
-                            <div class="accordion bg-secondary p-2 rounded-3" id="depositAccordion">
-                                <div class="accordion-item bg-transparent border-0">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button bg-tertiary text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                            <i class="fa fa-bank me-1"></i>Bank Details
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse bg-tertiary text-light show" data-bs-parent="#depositAccordion">
-                                        <table class="table table-borderless text-light bg-tertiary m-0 rounded-3">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="fw-bold text-white bg-transparent ps-2 pe-1">Bank Name</td>
-                                                    <td class="text-light bg-transparent px-1" id="bank-name"></td>
-                                                    <td class="bg-transparent px-1">
-                                                        <button class="btn text-white btn-sm px-1 py-0 d-flex align-items-center" onclick="copyText('bank-name')">
-                                                            <i class="fa fa-clone"></i>Copy
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="fw-bold text-white bg-transparent ps-2 pe-1">Account Holder Name</td>
-                                                    <td class="text-light bg-transparent px-1" id="account-holder-name"></td>
-                                                    <td class="bg-transparent pe-2 ps-1">
-                                                        <button class="btn text-white btn-sm px-1 py-0 d-flex align-items-center" onclick="copyText('account-holder-name')">
-                                                            <i class="fa fa-clone"></i>Copy
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="fw-bold text-white bg-transparent ps-2 pe-1">Account Number</td>
-                                                    <td class="text-light bg-transparent px-1" id="account-number"></td>
-                                                    <td class="bg-transparent pe-2 ps-1">
-                                                        <button class="btn text-white btn-sm px-1 py-0 d-flex align-items-center" onclick="copyText('account-number')">
-                                                            <i class="fa fa-clone"></i>Copy
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="fw-bold text-white bg-transparent ps-2 pe-1">IFSC Code</td>
-                                                    <td class="text-light bg-transparent px-1" id="ifsc-code"></td>
-                                                    <td class="bg-transparent pe-2 ps-1">
-                                                        <button class="btn text-white btn-sm px-1 py-0 d-flex align-items-center" onclick="copyText('ifsc-code')">
-                                                            <i class="fa fa-clone"></i>Copy
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="accordion-item bg-transparent border-0">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button bg-tertiary text-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            <i class="fa fa-qrcode me-1"></i>Scan QR for Payments
-                                        </button>
-                                    </h2>
-                                    <div id="collapseThree" class="accordion-collapse collapse bg-tertiary text-light text-center" data-bs-parent="#depositAccordion">
-                                        <table class="table table-borderless text-light bg-dark m-0 rounded-3">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="fw-bold text-white bg-transparent ps-2 pe-1">UPI Id</td>
-                                                    <td class="text-light bg-transparent px-1" id="upi-id"></td>
-                                                    <td class="bg-transparent pe-2 ps-1">
-                                                        <button class="btn text-white btn-sm px-1 py-0 d-flex align-items-center" onclick="copyText('upi-id')">
-                                                            <i class="fa fa-clone"></i>Copy
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="3" class="text-light bg-transparent px-1" id="upi-scanner"><img id="uploaded-qr" class="img-fluid mt-2" style="display:none;" alt="Uploaded QR Code"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="accordion-item bg-transparent border-0">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button bg-tertiary text-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                            <i class="fa fa-database me-1"></i>Deposit Funds
-                                        </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse bg-tertiary text-light p-1" data-bs-parent="#depositAccordion">
-                                        <ol class="ps-3 m-0">
-                                            <li>Deposit money only in the below available accounts to get the fastest credits and avoid possible delays.</li>
-                                            <li>Deposits made 45 minutes after the account removal from the site are valid &amp; will be added to their wallets.</li>
-                                            <li>Site is not responsible for money deposited to Old, Inactive or Closed accounts.</li>
-                                            <li>After deposit, add your UTR and amount to receive balance.</li>
-                                            <li>NEFT receiving time varies from 40 minutes to 2 hours.</li>
-                                        </ol>
-                                        <p class="m-0"><strong>**Always start instant payments by submitting amount below.</strong></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="upload mt-3 px-2">
-                                <button type="button" class="btn btn-outline-light w-100 py-3 ps-1 pe-0" id="uploadBtn"><i class="fa fa-plus-circle me-1"></i>Click here to upload payment screenshot</button>
-                            </div>
-                            <div class="mt-3 px-2">
-                                <button type="submit" class="btn bg-primary btn-sm text-white px-2 w-100">Submit Payment</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- Modal for Withdraw -->
-        <div class="modal fade" id="withdrawModal" tabindex="-1" aria-labelledby="withdrawModalLabel" aria-hidden="true" data-bs-backdrop="static">
-            <div class="modal-dialog position-absolute bottom-0 start-50 translate-middle-x m-0 px-3 w-100 py-2">
-                <form id="withdraw-form" method="post" enctype="multipart/form-data">
-                    <div class="modal-content bg-secondary border-0 rounded" id="withdraw-section">
-                        <!-- Withdraw Section (Step 1) -->
-                        <div class="modal-header bg-dark border-0 p-0 justify-content-center position-relative">
-                            <h6 class="modal-title text-light py-2 fw-normal" id="withdrawModalLabel">Withdraw</h6>
                             <img src="images/modal-close.png" alt="" class="img-fluid position-absolute modal-close" data-bs-dismiss="modal" aria-label="Close">
                         </div>
                         <div class="modal-body">
                             <div class="avl-bal bg-dark p-3 rounded-4">
-                                <p class="text-center m-0 text-light"><small>Available Balance</small></p>
+                                <p class="text-center m-0 text-light"><small>Wallet Balance</small></p>
                                 <h4 class="text-center m-0 text-white wallet-balance">0.00</h4>
                             </div>
                             <div class="mb-2">
-                                <label for="withdraw-coins" class="mb-1 text-light"><small>Withdraw Coins*</small></label>
-                                <input type="number" class="form-control bg-dark text-light border-0 withdraw-coins" id="withdraw-coins" placeholder="Enter coins" name="amount" required="">
+                                <label for="deposit-coins" class="mb-1 text-light"><small>Deposit Coins*</small></label>
+                                <input type="number" class="form-control bg-dark text-light border-0" id="deposit-coins" placeholder="Enter coins" min="1000" name="deposit_amount">
+                                <small><small class="text-primary">Minimum deposit amount is 1000 coins</small></small>
                             </div>
-                            <button class="btn bg-primary btn-sm text-white px-2 w-100" id="rqst-payment-btn">Request Payment</button>
+                            <button class="btn bg-primary btn-sm text-white px-2 w-100" id="make-payment-btn" data-bs-target="#depositstep2Modal" data-bs-toggle="modal">Make Payment</button>
                         </div>
                     </div>
-                    <!-- Payment Details Section (Step 2) -->
-                    <div class="modal-content bg-secondary border-0 rounded d-none" id="account-details-section">
-                        <div class="modal-header bg-dark border-0 p-0 justify-content-center position-relative">
-                            <h6 class="modal-title text-light py-2 fw-normal" id="withdrawModalLabel">Withdraw <span id="withdraw-amount"></span></h6>
-                            <img src="images/modal-close.png" alt="" class="img-fluid position-absolute modal-close" data-bs-dismiss="modal" aria-label="Close">
-                        </div>
-                        <div class="modal-body px-1">
-                            <div class="accordion bg-secondary p-2 rounded-3" id="withdraw">
-                                <div class="accordion-item bg-transparent border-0">
-                                    <h2 class="accordion-header">
-                                    <button class="accordion-button bg-tertiary text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            <i class="fa fa-database me-1"></i>Withdraw Funds
-                                        </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse bg-tertiary text-light show p-1" data-bs-parent="#withdraw">
-                                        <ol class="ps-3 m-0">
-                                            <li>This form is for withdrawing the amount from the main wallet only.</li>
-                                            <li>The bonus wallet amount cannot be withdrawn by this form.</li>
-                                            <li>Do not put Withdraw request without betting with deposit amount. Such activity will be identified as suspicious.</li>
-                                            <li>If multiple users are using the same withdrawal account, then all the linked users will be blocked.</li>
-                                            <li>Paytm account numbers always start with 91.</li>
-                                        </ol>
-                                    </div>
-                                </div>
-                                <div class="accordion-item bg-transparent border-0">
-                                    <h2 class="accordion-header">
-                                    <button class="accordion-button bg-tertiary text-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            <i class="fa fa-bank me-1"></i>Enter Account Details
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse bg-tertiary text-light" data-bs-parent="#withdraw">
-                                        <div class="bg-dark m-0 rounded-3 text-light p-2">
-                                            <div class="mb-2">
-                                                <label for="accountholdername" class="mb-1">Account Holder Name*</label>
-                                                <input type="text" class="form-control bg-secondary text-light border-0" name="accountholdername" id="accountholdername" placeholder="Account holder name" required="" value="">
-                                            </div>
-                                            <div class="mb-2">
-                                                <label for="accountnumber" class="mb-1">Account Number*</label>
-                                                <input type="text" class="form-control bg-secondary text-light border-0" name="accountnumber" id="accountnumber" placeholder="Account Number" required="" value="">
-                                            </div>
-                                            <div class="mb-2">
-                                                <label for="ifsccode" class="mb-1">IFSC Code*</label>
-                                                <input type="text" class="form-control bg-secondary text-light border-0" name="ifsccode" id="ifsccode" placeholder="IFSC Code" required="" value="">
-                                            </div>
-                                            <div class="mb-2">
-                                                <label for="bankname" class="mb-1">Bank Name*</label>
-                                                <input type="text" class="form-control bg-secondary text-light border-0" name="bankname" id="bankname" placeholder="Bank Name" required="" value="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-3 px-2">
-                                <button type="submit" class="btn bg-primary btn-sm text-white px-2 w-100">Submit</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
 
         <!-- ID Deposit Modal -->
-        <div class="modal fade" id="paneldepositModal" tabindex="-1" aria-labelledby="paneldepositModalLabel" data-bs-backdrop="static" aria-modal="true" role="dialog">
+        <div class="modal fade" id="paneldepositModal" tabindex="-1" aria-labelledby="paneldepositModalLabel" aria-hidden="true" data-bs-backdrop="static">
             <div class="modal-dialog position-absolute bottom-0 start-50 translate-middle-x m-0 px-3 w-100 py-2">
                 <div class="modal-content bg-secondary border-0 rounded" id="deposite-wrap">
                     <div class="modal-header bg-dark border-0 p-0 justify-content-center position-relative">
@@ -432,7 +227,7 @@
                         <img src="images/modal-close.png" alt="" class="img-fluid position-absolute modal-close" data-bs-dismiss="modal" aria-label="Close">
                     </div>
                     <div class="modal-body">
-                        <form id="panel-deposit-form" method="post" enctype="multipart/form-data">
+                        <div id="panel-deposit-form" method="post" enctype="multipart/form-data">
                             <div>
                                 <div class="avl-bal bg-dark p-3 rounded-4 mb-3">
                                     <div class="item_img rounded-circle me-2 bg-dark p-1 d-flex align-items-center list_item justify-content-center">
@@ -457,18 +252,22 @@
                                         <small class="text-white">Pay from wallet <br> (Current Wallet Balance : <span>1000</span>)</small>
                                     </label></div>
                                 </div>
-                                <button type="button" class="btn bg-primary btn-sm text-white px-2 w-100" id="make-payment-btn1">Continue to Pay <span>1000</span></button>
+                                <button type="button" class="btn bg-primary btn-sm text-white px-2 w-100" id="id-payment-btn" >Continue to Pay <span>1000</span></button>
+                                <!-- data-bs-target="#depositstep2Modal" data-bs-toggle="modal" -->
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <!-- Payment Details Section (Step 2) -->
-                <div class="modal-content bg-secondary border-0 rounded d-none" id="payment-details-section1">
-                    <div class="modal-header bg-dark border-0 p-2 py-0 justify-content-center position-relative">
-                        <!-- <img src="images/back-btn.png" alt="" class="img-fluid h-100 close_btn_img"> -->
-                        <h6 class="modal-title text-light py-2 fw-normal" id="depositModalLabel">Pay <span id="pay-amount"></span></h6>
-                        <img src="images/modal-close.png" alt="" class="img-fluid modal-close position-absolute" data-bs-dismiss="modal" aria-label="Close">
+        <!-- Deposit Details Section (Step 2) -->
+        <div class="modal fade" id="depositstep2Modal" tabindex="-1" aria-labelledby="depositstep2ModalLabel" data-bs-backdrop="static" aria-modal="true" role="dialog">
+            <div class="modal-dialog position-absolute bottom-0 start-50 translate-middle-x m-0 px-3 w-100 py-2">
+                <div class="modal-content bg-secondary border-0 rounded" id="payment-details-section">
+                    <div class="modal-header bg-dark border-0 p-0 justify-content-center position-relative">
+                        <h6 class="modal-title text-light py-2 fw-normal" id="depositstep2ModalLabel">Pay <span id="pay-amount"></span></h6>
+                        <img src="images/modal-close.png" alt="" class="img-fluid position-absolute modal-close" data-bs-dismiss="modal" aria-label="Close">
                     </div>
                     <div class="modal-body px-1">
                         <div class="accordion bg-secondary p-2 rounded-3" id="deposit">
@@ -478,8 +277,8 @@
                                         <i class="fa fa-bank me-1"></i>Bank Details
                                     </button>
                                 </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse bg-tertiary show text-light" data-bs-parent="#deposit">
-                                    <table class="table table-borderless text-light bg-tertiary m-0 rounded-3">
+                                <div id="collapseTwo" class="accordion-collapse collapse bg-tertiary text-light show p-1" data-bs-parent="#deposit">
+                                    <table class="table table-borderless text-light bg-dark m-0 rounded-3">
                                         <tbody>
                                             <tr>
                                                 <td class="fw-bold text-white bg-transparent ps-2 pe-1">Bank Name</td>
@@ -501,7 +300,8 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="fw-bold text-white bg-transparent ps-2 pe-1">Account Number</td>
+                                                <td class="fw-bold text-white bg-transparent ps-2 pe-1">Account Number
+                                                </td>
                                                 <td class="text-light bg-transparent px-1" id="account-number">924010045092602</td>
                                                 <td class="bg-transparent pe-2 ps-1">
                                                     <button class="btn text-white btn-sm px-1 py-0 d-flex align-items-center" onclick="copyText('account-number')">
@@ -533,7 +333,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="fw-bold text-white bg-transparent ps-2 pe-1">UPI Id</td>
-                                                <td class="text-light bg-transparent px-1" id="upi-id">Gro777@axisbank </td>
+                                                <td class="text-light bg-transparent px-1" id="upi-id">ac@iciciak</td>
                                                 <td class="bg-transparent pe-2 ps-1">
                                                     <button class="btn text-white btn-sm px-1 py-0 d-flex align-items-center" onclick="copyText('upi-id')">
                                                         <i class="fa fa-clone"></i>Copy
@@ -541,7 +341,9 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="3" class="text-light bg-transparent px-1" id="upi-scanner"><img id="uploaded-qr" class="img-fluid mt-2" style="" alt="Uploaded QR Code" src="images/qr.png"></td>
+                                                <td colspan="3" class="text-light bg-transparent px-1" id="upi-scanner">
+                                                    <img id="uploaded-qr" class="img-fluid mt-2" alt="Uploaded QR Code" src="images/qr.png">
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -553,7 +355,7 @@
                                         <i class="fa fa-database me-1"></i>Deposit Funds
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse bg-tertiary text-light p-1" data-bs-parent="#deposit">
+                                <div id="collapseOne" class="accordion-collapse collapse bg-tertiary text-light p-2" data-bs-parent="#deposit">
                                     <ol class="ps-3 m-0">
                                         <li>Deposit money only in the below available accounts to get the fastest
                                             credits and avoid possible delays.</li>
@@ -564,8 +366,7 @@
                                         <li>After deposit, add your UTR and amount to receive balance.</li>
                                         <li>NEFT receiving time varies from 40 minutes to 2 hours.</li>
                                     </ol>
-                                    <p class="m-0"><strong>**Always start instant payments by submitting amount
-                                            below.</strong></p>
+                                    <p class="m-0"><strong>**Always start instant payments by submitting amount below.</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -585,33 +386,135 @@
             </div>
         </div>
 
-        <!-- Withdraw Modal -->
+        <!-- Modal for Withdraw -->
+        <div class="modal fade" id="withdrawModal" tabindex="-1" aria-labelledby="withdrawModalLabel" data-bs-backdrop="static"aria-hidden="true" role="dialog">
+            <div class="modal-dialog position-absolute bottom-0 start-50 translate-middle-x m-0 px-3 w-100 py-2">
+                <div id="withdraw-form" method="post" enctype="multipart/form-data">
+                    <div class="modal-content bg-secondary border-0 rounded" id="withdraw-section1">
+                        <!-- Withdraw Section (Step 1) -->
+                        <div class="modal-header bg-dark border-0 p-0 justify-content-center position-relative">
+                            <h6 class="modal-title text-light py-2 fw-normal" id="withdrawModalLabel">Withdraw</h6>
+                            <img src="images/modal-close.png" alt="" class="img-fluid position-absolute modal-close" data-bs-dismiss="modal" aria-label="Close">
+                        </div>
+                        <div class="modal-body">
+                            <div class="avl-bal bg-dark p-3 rounded-4">
+                                <p class="text-center m-0 text-light"><small>Available Balance</small></p>
+                                <h4 class="text-center m-0 text-white wallet-balance">0.00</h4>
+                            </div>
+                            <div class="mb-2">
+                                <label for="withdraw-coins" class="mb-1 text-light"><small>Withdraw Coins*</small></label>
+                                <input type="number" class="form-control bg-dark text-light border-0 withdraw-coins" id="withdraw-coins" placeholder="Enter coins" name="amount" required="">
+                            </div>
+                            <button class="btn bg-primary btn-sm text-white px-2 w-100" id="rqst-payment-btn" data-bs-target="#withdraw-step2" data-bs-toggle="modal">Request Payment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Id Withdraw Modal -->
         <div class="modal fade" id="panelwithdrawModal" tabindex="-1" aria-labelledby="panelwithdrawModalLabel" aria-hidden="true" data-bs-backdrop="static">
             <div class="modal-dialog position-absolute bottom-0 start-50 translate-middle-x m-0 px-3 w-100 py-2">
-                <div class="modal-content bg-secondary border-0 rounded">
+                <div class="modal-content bg-secondary border-0 rounded" id="withdraw-section">
                     <div class="modal-header bg-dark border-0 p-0 justify-content-center position-relative">
-                        <h5 class="modal-title text-light py-2 fw-normal" id="panelwithdrawModalLabel">Withdraw Coins</h5>
+                        <h5 class="modal-title text-light py-2 fw-normal" id="panelwithdrawModalLabel">Withdraw</h5>
                         <img src="images/modal-close.png" alt="" class="img-fluid position-absolute modal-close" data-bs-dismiss="modal" aria-label="Close">
                     </div>
                     <div class="modal-body">
-                    <form id="panel-withdraw-form">
-                    <input type="hidden" id="withdrawPanelId" name="panel_id">
-                    <div class="avl-bal bg-dark p-3 rounded-4">
-                                <p class="text-center m-0 text-light"><small>Panel Balance</small></p>
-                                <h4 class="text-center m-0 text-white panel-balance">0</h4>
+                        <div id="panel-withdraw-form">
+                            <div class="avl-bal bg-dark p-3 rounded-4 mb-3">
+                                <div class="item_img rounded-circle me-2 bg-dark p-1 d-flex align-items-center list_item justify-content-center">
+                                    <img src="images/bigline_exch99.png" alt="" class="img-fluid game-image rounded-circle">
+                                </div>
+                                <p class="text-center m-0 text-light"><small>lemonexch7.com</small></p>
+                                <h4 class="text-center m-0 text-white"><small>acc128</small></h4>
+                                <p class="text-center m-0 text-light"><small>Daily Withdrawal Limit : 1,00,00,000</small></p>
                             </div>
-                            <div class="mb-3">
-                                <label for="panelwithdrawCoins" class="mb-1 text-light">Enter Coins to Withdraw</label>
-                                    <div class="calculation d-flex text-light align-items-center">
-                                    <input type="number" class="form-control bg-dark text-light border-0 panel-coins" id="panelwithdrawCoins" required="">
-                                    <span class="mx-2">X</span>
-                                    <input type="text" class="form-control bg-dark text-light border-0 panel-rate" placeholder="rate" id="rate" value="" readonly="">
-                                    <span class="mx-2">=</span>
-                                    <input type="text" class="form-control bg-dark text-light border-0" id="panelwtotal-amt" value="" readonly="">
+                            <input type="hidden" id="withdrawPanelId" name="panel_id">
+                            <div class="avl-bal bg-dark p-3 rounded-4">
+                                <p class="text-center m-0 text-light"><small>Available Balance</small></p>
+                                <h4 class="text-center m-0 text-white panel-balance">
+                                    <small>5000.00</small></h4>
+                            </div>
+                            <div class="mt-2 mb-3">
+                                <label for="panelwithdrawCoins" class="mb-1 text-light">Withdraw Coins</label>
+                                <div class="calculation d-flex text-light align-items-center">
+                                    <input type="number" class="form-control bg-dark text-light border-0" id="panelwithdrawCoins" placeholder="Enter Coins" required="">
+                                </div>
+                                <div class="form-check mt-2 ">
+                                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
+                                    <label class="form-check-label text-light small-text" for="radioDefault1"> Withdraw to wallet</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" checked>
+                                    <label class="form-check-label text-light small-text" for="radioDefault2">Withdraw to bank</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn bg-primary btn-sm text-white px-2 w-100" id="panelwithdrawid"data-bs-target="#withdraw-step2" data-bs-toggle="modal" >Withdraw</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Withdraw Details Section (Step 2) -->
+        <div class="modal fade" id="withdraw-step2" tabindex="-1" aria-labelledby="withdraw-step2Label" aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog position-absolute bottom-0 start-50 translate-middle-x m-0 px-3 w-100 py-2">
+                <div class="modal-content bg-secondary border-0 rounded" id="account-details-section">
+                    <div class="modal-header bg-dark border-0 p-0 justify-content-center position-relative">
+                        <h6 class="modal-title text-light py-2 fw-normal" id="withdrawModalLabel">Withdraw <span id="withdraw-amount"></span></h6>
+                        <img src="images/modal-close.png" alt="" class="img-fluid position-absolute modal-close" data-bs-dismiss="modal" aria-label="Close">
+                    </div>
+                    <div class="modal-body px-1">
+                        <div class="accordion bg-secondary p-2 rounded-3" id="withdraw">
+                            
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button bg-tertiary text-light  " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                        <i class="fa fa-bank me-1"></i>Enter Account Details
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse bg-tertiary show text-light" data-bs-parent="#withdraw">
+                                    <div class="bg-dark m-0 rounded-3 text-light p-2">
+                                        <div class="mb-2">
+                                            <label for="accountholdername" class="mb-1">Account Holder Name*</label>
+                                            <input type="text" class="form-control bg-secondary text-light border-0" name="accountholdername" id="accountholdername" placeholder="Account holder name" value="">
+                                        </div>
+                                        <div class="mb-2">
+                                            <label for="accountnumber" class="mb-1">Account Number*</label>
+                                            <input type="text" class="form-control bg-secondary text-light border-0" name="accountnumber" id="accountnumber" placeholder="Account Number" value="">
+                                        </div>
+                                        <div class="mb-2">
+                                            <label for="ifsccode" class="mb-1">IFSC Code*</label>
+                                            <input type="text" class="form-control bg-secondary text-light border-0" name="ifsccode" id="ifsccode" placeholder="IFSC Code" value="">
+                                        </div>
+                                        <div class="mb-2">
+                                            <label for="bankname" class="mb-1">Bank Name*</label>
+                                            <input type="text" class="form-control bg-secondary text-light border-0" name="bankname" id="bankname" placeholder="Bank Name" value="">
+                                        </div>
                                     </div>
+                                </div>
                             </div>
-                            <button type="submit" class="btn bg-primary btn-sm text-white px-2 w-100">Withdraw</button>
-                        </form>
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button bg-tertiary text-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        <i class="fa fa-database me-1"></i>Withdraw Funds
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse bg-tertiary text-light p-1" data-bs-parent="#withdraw">
+                                    <ol class="ps-3 m-0">
+                                        <li>This form is for withdrawing the amount from the main wallet only.</li>
+                                        <li>The bonus wallet amount cannot be withdrawn by this form.</li>
+                                        <li>Do not put Withdraw request without betting with deposit amount. Such activity will be identified as suspicious.</li>
+                                        <li>If multiple users are using the same withdrawal account, then all the linked users will be blocked.</li>
+                                        <li>Paytm account numbers always start with 91.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3 px-2">
+                            <button type="submit" class="btn bg-primary btn-sm text-white px-2 w-100">Submit</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -643,17 +546,18 @@
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
             const depositCoinsInput = document.getElementById('deposit-coins1');
-            const makePaymentBtn = document.getElementById('make-payment-btn1');
+            const makePaymentBtn = document.getElementById('id-payment-btn');
             const depositErrorToast = document.getElementById('deposit-error-toast');
             const toastBootstrap = bootstrap.Toast.getOrCreateInstance(depositErrorToast);
 
             if (makePaymentBtn) {
-                makePaymentBtn.addEventListener('click', function() {
+                makePaymentBtn.addEventListener('click', function(e) {
                 
                     const depositAmount = parseInt(depositCoinsInput.value);
                     
                     try{
                         if (depositAmount < 1000) {
+                            e.preventDefault();
                             console.log(depositAmount)
                             toastBootstrap.show();
                             setTimeout(function() {
@@ -661,11 +565,12 @@
                             }, 100000);
                         } 
                         else {
-                            event.preventDefault();
-                            console.log(depositAmount)
-                            document.getElementById('deposite-wrap').classList.add('d-none');
-                            // $('#deposit-section').addClass('d-none');
-                            document.getElementById('payment-details-section1').classList.remove('d-none');
+                            const firstModal = bootstrap.Modal.getInstance(document.getElementById('paneldepositModal'));
+                            firstModal.hide();
+
+                            // Show second modal
+                            const secondModal = new bootstrap.Modal(document.getElementById('depositstep2Modal'));
+                            secondModal.show();
                         }
                     }
                     catch(err) {

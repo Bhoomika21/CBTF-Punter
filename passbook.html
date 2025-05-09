@@ -34,61 +34,99 @@
                     <div class="text-center text-light">No transactions found.</div>
                 </div>
 
-                <div class="listing">
-                    <div class="list_item d-flex justify-content-between align-items-center bg-secondary rounded p-2 my-1">
+                <div class="listing passbook_listig">
+                    <!-- <div class="list_item d-flex justify-content-between align-items-center bg-secondary rounded p-2 my-1">
                         <div class="label">
-                            <!-- <a class="btn btn-sm text-white bg-success rounded-1 px-2 me-1">
-                                <small>DEPOSIT</small>
-                            </a> -->
                             <div class="paneltype text-light">
-                                <small>Deposit to Wallet</small>
+                                <small class="text-white">Deposit to Wallet</small>
                             </div>
                             <div class="paneltype text-light">
                                 <small>22nd Apr, 2025 05:48 PM</small>
                             </div>
                         </div>
-                        <div class="detail text-end">
+                        <div class="detail text-end panel-info">
                             <div class="name text-light lh-1 fw-bold">
                                 <small>5000.00</small>
                             </div>
                             <small class="text-info">Pending</small>
                         </div>
-                    </div>
+                    </div> -->
 
-                     <div class="list_item bg-secondary rounded p-2 my-1">
-                        <a href="#tab1" class="d-flex justify-content-between align-items-center" data-toggle="collapse">
+                    <div class="list_item bg-secondary rounded p-2 my-1">
+                        <div class="d-flex justify-content-between align-items-center cursor">
                             <div class="label">
-                                <!-- <a class="btn btn-sm text-white bg-success rounded-1 px-2 me-1">
-                                    <small>DEPOSIT</small>
-                                </a> -->
                                 <div class="paneltype text-light">
-                                    <small>Deposit to Wallet</small>
+                                    <small class="text-white">Deposit to Wallet</small>
                                 </div>
                                 <div class="paneltype text-light">
                                     <small>22nd Apr, 2025 05:48 PM</small>
                                 </div>
                             </div>
-                            <div class="detail text-end">
+                            <div class="detail text-end d-flex gap-3 align-items-center">
                                 <div class="name text-light lh-1 fw-bold">
-                                    <small>5000.00</small>
+                                    <small>0</small> <br>
+                                    <small class="text-success">Approved</small>
                                 </div>
-                                <small class="text-success">Approved</small>
+                                <i class="fa fa-arrow-circle-o-right text-light" aria-hidden="true"></i>
+                                
                             </div>
-                        </a>
-                        <div id="tab1" class="collapse">
-                            Reference no.
-DW-PVHBATUB-261
+                        </div>
+                        <div class="panel-info text-white">
+                            <div class="d-flex justify-content-between align-items-center ">
+                                <p>Reference no.</p>
+                                <p>DW-PVHBATUB-261</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p>Coins</p>
+                                <p>0</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p>Approved on</p>
+                                <p>19 Apr 2025 09:12 PM</p>
+                            </div>
+                        </div>
+                    </div>
 
-Coins
-1,000
-
-Approved on
-19 Apr 2025 09:12 PM
-
-Screenshot
-UTR: AXOMB10845094572
-
-Approved
+                    <div class="list_item bg-secondary rounded p-2 my-1">
+                        <div class="d-flex justify-content-between align-items-center cursor">
+                            <div class="label">
+                                <div class="paneltype text-light">
+                                    <small class="text-white">Create ID</small>
+                                </div>
+                                <div class="paneltype text-light">
+                                    <small>lemonexch7.com</small><br>
+                                    <small>acc128</small><br>
+                                    <small>19 Apr 2025 06:48 PM</small>
+                                </div>
+                            </div>
+                            <div class="detail text-end d-flex gap-3 align-items-center">
+                                <div class="name text-light lh-1 fw-bold">
+                                    <small>5000.00</small> <br>
+                                    <small class="text-success">Approved</small>
+                                </div>
+                                <i class="fa fa-arrow-circle-o-right text-light" aria-hidden="true"></i>
+                                
+                            </div>
+                        </div>
+                        <div class="panel-info text-white">
+                            <div class="d-flex justify-content-between align-items-center ">
+                                <p>Reference no.</p>
+                                <p>DW-PVHBATUB-261</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p>Coins</p>
+                                <p>1,000</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p>Approved on</p>
+                                <p>19 Apr 2025 09:12 PM</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center img_div">
+                                <p>
+                                    <img src="images/bigline_exch99.png" /> UTR: AXOMB10845094572
+                                </p>
+                                <p class="text-success">Approved</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -131,5 +169,20 @@ Approved
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="custom.js"></script>
+    <script>
+        $(document).ready(function () {
+          $('.list_item').on('click', function () {
+            const $info = $(this).find('.panel-info');
+
+            if ($info.is(':visible')) {
+              $info.slideUp();
+            } else {
+              $('.panel-info').slideUp(); // hide all
+              $info.slideDown(); // show clicked one
+            }
+          });
+        });
+    </script>
+
 </body>
 </html>
